@@ -1,0 +1,600 @@
+/* GENERAL */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    color: #2b1a10;
+    background: #f7f5f0;
+}
+
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+/* ANNOUNCEMENT BAR */
+
+.announcement {
+    background: #29190f;
+    color: #fff;
+    font-size: 10px;
+    padding: 9px;
+    letter-spacing: 1px;
+}
+
+
+/* NAVIGATION */
+
+.main-nav {
+    background: #f7f5f0;
+    padding: 15px 0;
+    border-bottom: 1px solid #e9e4dc;
+}
+
+.navbar-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 27px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    color: #29190f !important;
+}
+
+.nav-link {
+    font-size: 11px;
+    color: #29190f;
+    margin-right: 18px;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #b18a4b;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+
+/* HERO SECTION */
+
+.hero {
+    padding: 0 20px;
+}
+
+.hero-image {
+    height: 650px;
+    background:
+    linear-gradient(rgba(0,0,0,0.18), rgba(0,0,0,0.18)),
+    url('https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?w=1800')
+    center/cover no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h1 {
+    font-size: clamp(65px, 10vw, 120px);
+    font-weight: 600;
+    letter-spacing: 3px;
+}
+
+.hero-small {
+    font-size: 10px;
+    letter-spacing: 4px;
+}
+
+.hero-content p {
+    font-size: 13px;
+    letter-spacing: 1px;
+}
+
+.hero-btn {
+    display: inline-block;
+    color: white;
+    border: 1px solid white;
+    padding: 13px 25px;
+    font-size: 10px;
+    letter-spacing: 2px;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.hero-btn:hover {
+    background: white;
+    color: #29190f;
+}
+
+
+/* INTRODUCTION */
+
+.intro-section {
+    padding-top: 110px;
+    padding-bottom: 65px;
+}
+
+.section-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: #977448;
+    font-weight: 600;
+}
+
+.intro-section h2 {
+    font-size: clamp(40px, 5vw, 65px);
+    line-height: 1;
+    font-weight: 500;
+}
+
+.intro-text {
+    font-size: 12px;
+    line-height: 1.9;
+}
+
+.text-link {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #29190f;
+    padding-bottom: 5px;
+    margin-top: 10px;
+}
+
+
+/* PRODUCTS */
+
+.products-section {
+    padding-top: 50px;
+    padding-bottom: 100px;
+}
+
+.section-heading h2 {
+    font-size: 48px;
+}
+
+.product-image {
+    position: relative;
+    background: #efede7;
+    overflow: hidden;
+    height: 340px;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s;
+}
+
+.product-card:hover img {
+    transform: scale(1.07);
+}
+
+.wishlist-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: white;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.wishlist-btn.active {
+    color: #9e382b;
+}
+
+.product-info {
+    padding-top: 15px;
+}
+
+.product-info h6 {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.product-info p {
+    font-size: 11px;
+    color: #8d8174;
+}
+
+
+/* EDITORIAL SECTION */
+
+.editorial-section {
+    background: #29190f;
+    color: white;
+}
+
+.editorial-text {
+    display: flex;
+    align-items: center;
+    padding: 70px;
+}
+
+.editorial-inner h2 {
+    font-size: clamp(45px, 5vw, 65px);
+    line-height: 0.95;
+    margin: 25px 0 40px;
+}
+
+.editorial-inner > p:not(.section-label) {
+    font-size: 12px;
+    line-height: 1.9;
+    color: #d3c7ba;
+    max-width: 350px;
+}
+
+.light-link {
+    display: inline-block;
+    font-size: 10px;
+    letter-spacing: 1px;
+    border-bottom: 1px solid white;
+    padding-bottom: 6px;
+    margin-top: 20px;
+    color: white;
+}
+
+.editorial-image {
+    height: 600px;
+}
+
+.editorial-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* BELIEF SECTION */
+
+.belief-section {
+    background: #eae5dc;
+}
+
+.belief-image {
+    height: 600px;
+}
+
+.belief-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.belief-content {
+    padding: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.belief-content h2 {
+    font-size: clamp(45px, 5vw, 65px);
+    line-height: 1;
+    margin: 20px 0;
+}
+
+.belief-content p:not(.section-label) {
+    font-size: 12px;
+    line-height: 2;
+    max-width: 420px;
+}
+
+
+/* NEWSLETTER */
+
+.newsletter-section {
+    padding: 100px 20px;
+}
+
+.newsletter-section h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.newsletter-section > p:not(.section-label) {
+    font-size: 12px;
+    color: #80756b;
+}
+
+.newsletter-form {
+    display: flex;
+    max-width: 450px;
+    margin: 35px auto 0;
+    border-bottom: 1px solid #29190f;
+}
+
+.newsletter-form input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    padding: 15px 5px;
+    outline: none;
+    font-size: 12px;
+}
+
+.newsletter-form button {
+    background: transparent;
+    border: none;
+    font-size: 10px;
+    letter-spacing: 1px;
+    cursor: pointer;
+}
+
+
+/* FOOTER */
+
+.footer {
+    background: #29190f;
+    color: #f7f5f0;
+    padding: 75px 0 20px;
+}
+
+.footer-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 35px;
+    letter-spacing: 3px;
+}
+
+.footer p {
+    font-size: 11px;
+    line-height: 1.9;
+    color: #c4b8aa;
+}
+
+.footer h6 {
+    font-size: 11px;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+.footer a {
+    display: block;
+    color: #c4b8aa;
+    font-size: 11px;
+    margin-bottom: 14px;
+}
+
+.footer a:hover {
+    color: white;
+}
+
+.social-links {
+    display: flex;
+    gap: 20px;
+    margin-top: 25px;
+}
+
+.social-links a {
+    font-size: 18px;
+}
+
+.footer hr {
+    border-color: #665548;
+    margin: 50px 0 25px;
+}
+
+.footer-bottom p {
+    font-size: 9px;
+    letter-spacing: 1px;
+}
+
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 991px) {
+
+    .hero-image {
+        height: 550px;
+    }
+
+    .editorial-text {
+        padding: 55px 35px;
+    }
+
+    .editorial-image {
+        height: 450px;
+    }
+
+    .belief-content {
+        padding: 55px 35px;
+    }
+
+    .belief-image {
+        height: 450px;
+    }
+
+    .product-image {
+        height: 280px;
+    }
+
+}
+
+@media (max-width: 576px) {
+
+    .hero {
+        padding: 0;
+    }
+
+    .hero-image {
+        height: 520px;
+    }
+
+    .intro-section {
+        padding: 65px 20px 35px;
+    }
+
+    .intro-section h2 {
+        font-size: 43px;
+    }
+
+    .intro-text {
+        margin-top: 25px;
+    }
+
+    .products-section {
+        padding: 45px 20px 65px;
+    }
+
+    .section-heading h2 {
+        font-size: 35px;
+    }
+
+    .product-image {
+        height: 210px;
+    }
+
+    .product-info h6 {
+        font-size: 9px;
+    }
+
+    .editorial-image {
+        height: 350px;
+    }
+
+    .editorial-text {
+        padding: 55px 25px;
+    }
+
+    .belief-image {
+        height: 350px;
+    }
+
+    .belief-content {
+        padding: 55px 25px;
+    }
+
+    .newsletter-section h2 {
+        font-size: 32px;
+    }
+
+    .nav-right {
+        font-size: 11px;
+    }
+/* FINAL NAVIGATION ALIGNMENT FIX */
+
+.main-nav {
+    width: 100%;
+    padding: 24px 0;
+    background: #F5F2EC;
+}
+
+.nav-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+/* LEFT MENU SPACING */
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+/* CENTRE LOGO */
+.logo-center {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    margin: 0;
+    white-space: nowrap;
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    letter-spacing: 4px;
+    color: #2B1A10 !important;
+}
+
+/* RIGHT MENU SPACING */
+.nav-right {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 35px;
+}
+
+/* LINK STYLING */
+.nav-left a,
+.nav-right a {
+    text-decoration: none;
+    color: #2B1A10;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.nav-left a:hover,
+.nav-right a:hover {
+    color: #B18A4B;
+}
+}/* FORCE NAVIGATION SPACING */
+
+nav.main-nav .nav-container .nav-left {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0 !important;
+}
+
+nav.main-nav .nav-container .nav-left a {
+    margin-right: 35px !important;
+    display: inline-block !important;
+}
+
+nav.main-nav .nav-container .nav-right {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0 !important;
+}
+
+nav.main-nav .nav-container .nav-right a {
+    margin-left: 30px !important;
+    display: inline-block !important;
+}/* FIX SÉVARA LOGO - TRUE CENTRE OF NAVBAR */
+
+.main-nav {
+    position: relative !important;
+    width: 100%;
+}
+
+.main-nav .nav-container {
+    position: static !important;
+}
+
+.main-nav .logo-center {
+    position: absolute !important;
+    left: 50% !important;
+    top: 50% !important;
+    transform: translate(-50%, -50%) !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    letter-spacing: 4px;
+    white-space: nowrap;
+    text-align: center;
+}
