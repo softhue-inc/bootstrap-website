@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SÉVARA | Crafted with Emotion</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --text: #2b1a10;
+      --background: #f7f5f0;
+      --dark: #29190f;
+      --gold: #b18a4b;
+      --belief: #eae5dc;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--background);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Announcement */
+
+    .announcement {
+      background: var(--dark);
+      color: #f7f5f0;
+      text-align: center;
+      padding: 10px;
+      font-size: 10px;
+      letter-spacing: 2px;
+    }
+
+    /* Navigation */
+
+    .navbar {
+      background: var(--background);
+      min-height: 76px;
+      padding: 15px 3%;
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid #e9e4dc;
+    }
+
+    .nav-left,
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+      font-size: 12px;
+      letter-spacing: .3px;
+    }
+
+    .nav-right {
+      justify-content: flex-end;
+    }
+
+    .navbar a:hover {
+      color: var(--gold);
+    }
+
+    .logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+      letter-spacing: 5px;
+      text-align: center;
+      color: var(--text);
+    }
+
+    /* Hero */
+
+    .hero {
+      min-height: 620px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      background:
+        linear-gradient(rgba(41,25,15,.30), rgba(41,25,15,.30)),
+        url("https://www.glistia.com.au/cdn/shop/files/hypoallergenic-and-water-safe-glistia_7554c4b0-7d4a-4066-988c-cfa4cc433681.jpg?v=1763372983&width=2048")
+        center 48% / cover no-repeat;
+      color: white;
+    }
+
+    .hero-content {
+      max-width: 750px;
+      padding: 30px;
+    }
+
+    .eyebrow {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 25px;
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 1.12;
+      font-weight: 400;
+      margin-bottom: 30px;
+    }
+
+    .hero-btn {
+      display: inline-block;
+      border: 1px solid white;
+      color: white;
+      padding: 14px 30px;
+      font-size: 10px;
+      letter-spacing: 2px;
+      transition: .3s;
+    }
+
+    .hero-btn:hover {
+      background: white;
+      color: var(--dark);
+    }
+
+    /* Introduction */
+
+    .intro {
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .intro h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(30px, 4vw, 46px);
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+
+    .intro p {
+      max-width: 600px;
+      margin: auto;
+      font-size: 13px;
+      line-height: 2;
+      color: #74685f;
+    }
+
+    /* Products */
+
+    .products-section {
+      padding: 35px 4% 100px;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(30px, 4vw, 43px);
+      font-weight: 400;
+    }
+
+    .section-heading a {
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    .product-card {
+      border: none;
+      background: transparent;
+      height: 100%;
+    }
+
+    .product-image {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      overflow: hidden;
+      background: #eee8df;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      transition: transform .6s ease;
+    }
+
+    .product-card:hover img {
+      transform: scale(1.04);
+    }
+
+    .product-info {
+      padding-top: 15px;
+    }
+
+    .product-info h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      font-weight: 400;
+      margin-bottom: 7px;
+    }
+
+    .product-info p {
+      font-size: 12px;
+      color: #81766d;
+    }
+
+    /* Editorial */
+
+    .editorial {
+      padding: 75px 5%;
+    }
+
+    .editorial-image {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+      object-position: center;
+      background: #eae1d5;
+    }
+
+    .editorial-content {
+      padding: 50px 8%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .editorial-content h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(36px, 4vw, 53px);
+      font-weight: 400;
+      line-height: 1.2;
+      margin-bottom: 25px;
+    }
+
+    .editorial-content p {
+      font-size: 13px;
+      line-height: 2;
+      color: #74685f;
+      margin-bottom: 25px;
+    }
+
+    .text-link {
+      font-size: 10px;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    /* Belief */
+
+    .belief {
+      background: var(--belief);
+      text-align: center;
+      padding: 100px 20px;
+    }
+
+    .belief .eyebrow {
+      color: #827365;
+    }
+
+    .belief h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(35px, 4vw, 48px);
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+
+    .belief p {
+      max-width: 620px;
+      margin: auto;
+      font-size: 13px;
+      line-height: 2;
+      color: #74685f;
+    }
+
+    /* Newsletter */
+
+    .newsletter {
+      padding: 90px 20px;
+      text-align: center;
+    }
+
+    .newsletter h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 38px;
+      font-weight: 400;
+      margin-bottom: 15px;
+    }
+
+    .newsletter p {
+      font-size: 13px;
+      color: #74685f;
+      margin-bottom: 30px;
+    }
+
+    .newsletter-form {
+      max-width: 430px;
+      margin: auto;
+      display: flex;
+      border-bottom: 1px solid var(--text);
+    }
+
+    .newsletter-form input {
+      flex: 1;
+      background: transparent;
+      border: none;
+      outline: none;
+      padding: 14px 5px;
+      font-family: inherit;
+      font-size: 12px;
+      color: var(--text);
+    }
+
+    .newsletter-form button {
+      background: transparent;
+      border: none;
+      font-size: 22px;
+      color: var(--text);
+      cursor: pointer;
+      padding: 0 10px;
+    }
+
+    /* Footer */
+
+    footer {
+      background: var(--dark);
+      color: #f7f5f0;
+      padding: 65px 5% 25px;
+    }
+
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 30px;
+      letter-spacing: 5px;
+      margin-bottom: 15px;
+    }
+
+    .footer-tagline {
+      font-size: 12px;
+      color: #c6b9aa;
+      line-height: 2;
+    }
+
+    .footer-column h4 {
+      font-size: 11px;
+      letter-spacing: 2px;
+      margin-bottom: 22px;
+      font-weight: 500;
+    }
+
+    .footer-column a {
+      display: block;
+      font-size: 12px;
+      color: #c6b9aa;
+      margin-bottom: 13px;
+    }
+
+    .footer-column a:hover {
+      color: white;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #514033;
+      margin-top: 50px;
+      padding-top: 22px;
+      font-size: 10px;
+      color: #c6b9aa;
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    @media (max-width: 768px) {
+      .navbar {
+        grid-template-columns: 1fr auto;
+      }
+
+      .nav-left {
+        display: none;
+      }
+
+      .logo {
+        text-align: left;
+        font-size: 25px;
+      }
+
+      .nav-right {
+        gap: 12px;
+        font-size: 10px;
+      }
+
+      .hero {
+        min-height: 500px;
+      }
+
+      .editorial-image {
+        height: 380px;
+      }
+
+      .editorial-content {
+        padding: 40px 15px;
+      }
+
+      .products-section {
+        padding-left: 5%;
+        padding-right: 5%;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Announcement -->
+  <div class="announcement">
+    COMPLIMENTARY SHIPPING ON ALL ORDERS
+  </div>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="nav-left">
+      <a href="#collections">Shop</a>
+      <a href="#collections">Collections</a>
+      <a href="#story">Our Story</a>
+      <a href="#journal">Journal</a>
+    </div>
+
+    <a href="#" class="logo">SÉVARA</a>
+
+    <div class="nav-right">
+      <a href="#collections">Wishlist</a>
+      <a href="#collections">Cart (<span id="cart-count">0</span>)</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">Jewellery that tells your story</p>
+      <h1>Every piece holds<br>a feeling.</h1>
+      <a href="#collections" class="hero-btn">EXPLORE COLLECTION</a>
+    </div>
+  </section>
+
+  <!-- Introduction -->
+  <section class="intro" id="story">
+    <p class="eyebrow">THE ART OF EVERYDAY ELEGANCE</p>
+    <h2>Designed to be cherished.</h2>
+    <p>
+      Jewellery is more than an accessory. It holds memories,
+      celebrates moments and becomes a part of who we are.
+      Discover thoughtfully crafted pieces made to stay with you.
+    </p>
+  </section>
+
+  <!-- First Collection -->
+  <section class="products-section" id="collections">
+    <div class="section-heading">
+      <h2>Curated for You</h2>
+      <a href="#collection-two">VIEW ALL COLLECTIONS ↗</a>
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-6 col-lg-3">
+        <div class="product-card">
+          <div class="product-image">
+            <img
+              src="https://kaboompics.com/cache_1/f/0/b/9/2/f0b92334ae51496e1c296f8c021c120dad823cc2.jpeg"
+              alt="Gold statement hoop earrings"
+              loading="eager">
+          </div>
+          <div class="product-info">
+            <h3>The Everyday Hoops</h3>
+            <p>₹2,499</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-lg-3">
+        <div class="product-card">
+          <div class="product-image">
+            <img
+              src="https://satana.dk/cdn/shop/collections/Smykker-kollektion.png?v=1757495878"
+              alt="Minimal gold rings and necklace"
+              loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3>Golden Moments</h3>
+            <p>₹3,299</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-lg-3">
+        <div class="product-card">
+          <div class="product-image">
+            <img
+              src="https://www.artisanaljewellery.com/cdn/shop/articles/18k_Gold-Plated.png?v=1758092214&width=1100"
+              alt="Gold plated necklace and bracelet"
+              loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3>The Signature Chain</h3>
+            <p>₹3,899</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-lg-3">
+        <div class="product-card">
+          <div class="product-image">
+            <img
+              src="https://majesticjewellery.co.uk/cdn/shop/articles/858d5851-42cc-443a-a56b-bb6b27d88062-6124558_0d01044b-95e1-44b8-8c59-f75b6cb48007.png?v=1775775503"
+              alt="Minimal gold rings and bracelet"
+              loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3>Timeless Details</h3>
+            <p>₹2,999</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Editorial -->
+  <section class="editorial">
+    <div class="row align-items-center g-4">
+
+      <div class="col-lg-6">
+        <img
+          class="editorial-image"
+          src="https://saze-diffusion.com/img/anblog/c/c33425bf9930cd7a5f8584a433b17ac1.png"
+          alt="Minimal gold necklace, bracelet and earrings">
+      </div>
+
+      <div class="col-lg-6 editorial-content">
+        <p class="eyebrow">THE SÉVARA APPROACH</p>
+        <h2>Emotion embraces technique.</h2>
+        <p>
+          Every creation begins with an emotion and takes shape
+          through thoughtful design. We bring together craftsmanship,
+          detail and creativity to create jewellery that feels personal.
+        </p>
+        <a href="#collection-two" class="text-link">
+          DISCOVER OUR COLLECTION ↗
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Second Collection -->
+  <section class="products-section" id="collection-two">
+    <div class="section-heading">
+      <h2>Made to be remembered.</h2>
+      <a href="#newsletter">EXPLORE MORE ↗</a>
+    </div>
+
+    <div class="row g-4">
+
+      <div class="col-6 col-lg-3">
+        <div class="product-card">
+          <div class="product-image">
+            <img
+              src="https://www.lioraluxee.in/cdn/shop/files/Liora_fa862b64-6741-464f-90e5-c48edeec4a0b.png?v=1781343660&width=1600"
+              alt="Elegant gold plated floral earrings"
+              loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3>Golden Grace</h3>
+            <p>₹3,499</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-lg-3">
+        <div class="product-card">
+          <div class="product-image">
+            <img
+              src="https://www.glistia.com.au/cdn/shop/files/hypoallergenic-and-water-safe-glistia_7554c4b0-7d4a-4066-988c-cfa4cc433681.jpg?v=1763372983&width=1600"
+              alt="Gold plated necklace and ring"
+              loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3>The Little Details</h3>
+            <p>₹2,799</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-lg-3">
+        <div class="product-card">
+          <div class="product-image">
+            <img
+              src="https://nuejewelz.com/cdn/shop/files/the-bold-statement-bangles-gold-flat-lay_f0862f64-84a8-4f20-a352-8954e05fa47e.png?v=1770216076&width=1445"
+              alt="Minimal gold bangles and necklace"
+              loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3>Forever Yours</h3>
+            <p>₹2,499</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-6 col-lg-3">
+        <div class="product-card">
+          <div class="product-image">
+            <img
+              src="https://www.ciunofor.com/cdn/shop/products/IMG_3175_d56f1c30-42a5-4780-881d-f486a03a8505_1445x.jpg?v=1703004581"
+              alt="Gold chain, ring and bracelet collection"
+              loading="lazy">
+          </div>
+          <div class="product-info">
+            <h3>The Keepsake</h3>
+            <p>₹3,199</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Belief -->
+  <section class="belief" id="journal">
+    <p class="eyebrow">A LITTLE ABOUT WHAT WE BELIEVE</p>
+    <h2>We believe in our process.</h2>
+    <p>
+      Thoughtful design, timeless details and an appreciation
+      for the little things. Each piece is created to complement
+      your individuality and become part of your story.
+    </p>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter" id="newsletter">
+    <p class="eyebrow">STAY A LITTLE CLOSER</p>
+    <h2>Letters from SÉVARA.</h2>
+    <p>Discover new collections, thoughtful stories and little moments of inspiration.</p>
+
+    <form class="newsletter-form" id="newsletter-form">
+      <input type="email" placeholder="Your email address" required>
+      <button type="submit" aria-label="Submit email">→</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="row g-5">
+
+      <div class="col-lg-5">
+        <div class="footer-logo">SÉVARA</div>
+        <p class="footer-tagline">
+          Crafted with Emotion.<br>
+          Worn with Meaning.
+        </p>
+      </div>
+
+      <div class="col-6 col-lg-2 footer-column">
+        <h4>EXPLORE</h4>
+        <a href="#collections">Shop</a>
+        <a href="#collections">Collections</a>
+        <a href="#story">Our Story</a>
+        <a href="#journal">Journal</a>
+      </div>
+
+      <div class="col-6 col-lg-2 footer-column">
+        <h4>HELP</h4>
+        <a href="#">Contact Us</a>
+        <a href="#">Shipping</a>
+        <a href="#">Returns</a>
+        <a href="#">FAQs</a>
+      </div>
+
+      <div class="col-6 col-lg-3 footer-column">
+        <h4>FOLLOW US</h4>
+        <a href="#">Instagram</a>
+        <a href="#">Pinterest</a>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <span>© 2026 SÉVARA. ALL RIGHTS RESERVED.</span>
+      <span>CRAFTED WITH EMOTION. WORN WITH MEANING.</span>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("newsletter-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      alert("Thank you for joining the SÉVARA family!");
+      this.reset();
+    });
+  </script>
+
+</body>
+</html>
+``
